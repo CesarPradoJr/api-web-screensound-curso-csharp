@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace ScreenSound.Banco;
 public class DAL<T> where T : class
@@ -36,7 +38,7 @@ public class DAL<T> where T : class
 
     public T? RecuperarPor(Func<T, bool> condicao)
     {
-        return context.Set<T>().FirstOrDefault(condicao);
+        return context.Set<T>().AsNoTracking().FirstOrDefault(condicao);
     }
 
     public IEnumerable<T> ListarPor(Func<T, bool> condicao)

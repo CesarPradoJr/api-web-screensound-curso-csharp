@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using ScreenSound.Modelos;
 using System;
@@ -13,12 +13,12 @@ public class ScreenSoundContext: DbContext
     public DbSet<Artista> Artistas { get; set; }
     public DbSet<Musica> Musicas { get; set; }
 
-    private string connectionString = "Server=localhost;Database=postgres;User Id=postgres;Password=1234;";
+    private string connectionString = "Host=localhost;Database=screensound;Username=postgres;Password=1234;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
-            .UseSqlServer(connectionString)
-            .UseLazyLoadingProxies(); 
+            .UseNpgsql(connectionString);
+            //.UseLazyLoadingProxies();         
     }
 }
