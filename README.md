@@ -15,7 +15,6 @@ O principal objetivo deste projeto é praticar a criação de APIs RESTful com A
 - [ASP.NET Core Web API](https://learn.microsoft.com/aspnet/core/web-api)
 - [Entity Framework Core](https://learn.microsoft.com/ef/core/)
 - [PostgreSQL](https://www.postgresql.org/)
-- [Swagger (Swashbuckle)](https://swagger.io/) *(implementado)*
 
 ## 📦 Funcionalidades
 
@@ -27,16 +26,16 @@ O principal objetivo deste projeto é praticar a criação de APIs RESTful com A
 
 ## 📁 Estrutura do Projeto (Atualmente)
 
-/ScreenSound
-├── Program.cs
-/ScreenSound.API
-├── Program.cs
-└── appsettings.json
-/ScreenSound.Shared.Dados
-├── Banco
-└── Migrations
-/ScreenSound.Shared.Modelos
-└── Modelos
+- /ScreenSound
+- ├── Program.cs
+- /ScreenSound.API
+- ├── Program.cs
+- └── appsettings.json
+- /ScreenSound.Shared.Dados
+- ├── Banco
+- └── Migrations
+- /ScreenSound.Shared.Modelos
+- └── Modelos
 
 
 ## 🔧 Como Executar Localmente
@@ -58,16 +57,16 @@ O principal objetivo deste projeto é praticar a criação de APIs RESTful com A
 5. Execute a aplicação:
      dotnet run
 
-🔮 Próximas melhorias
- Autenticação e autorização com JWT
+## 🔮 Próximas melhorias
+ - Autenticação e autorização com JWT
 
- Paginação e filtros nas consultas
+ - ⬜ Paginação e filtros nas consultas
 
- Testes unitários com xUnit
+ - ⬜ Testes unitários com xUnit
 
- Validações com FluentValidation
+ - ⬜ Validações com FluentValidation
 
- Deploy em nuvem
+ - ⬜ Deploy em nuvem
 
- Swagger
+ - ⬜ Swagger
 
