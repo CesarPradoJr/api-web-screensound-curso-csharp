@@ -12,12 +12,23 @@ public static class ArtistasExtensions
     {
         app.MapGet("/Artistas", ([FromServices] DAL<Artista> dal) =>
         {
-            return dal.Listar();
+            var listaDeArtistas = dal.Listar();
+            if (listaDeArtistas is null)
+            {
+                return Results.NotFound();
+            }
+            var listaDeArtistaResponse = EntityListToResponseList(listaDeArtistas);
+            return Results.Ok(listaDeArtistas);
 
         });
         app.MapGet("/Artistas/{nome}", ([FromServices] DAL<Artista> dal, string nome) =>
         {
-            return dal.RecuperarPor(a => a.Nome.ToUpper().Equals(nome.ToUpper()));
+            var artista = dal.RecuperarPor(a => a.Nome.ToUpper().Equals(nome.ToUpper()));
+            if (artista is null)
+            {
+                return Results.NotFound($"Artista {nome} não encontrado");
+            }
+            return Results.Ok(EntityToResponse(artista));
 
         });
 
